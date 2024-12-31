@@ -5,25 +5,45 @@
             "description": "Some websites I made",
             "samples": [
                 { 
-                    "name": "MyFile", 
+                    "name": "The Storage Advantage", 
                     "file": "myfile.txt", 
                     "id": "1234", 
-                    "link": "https://example.com/myfile.txt", 
-                    "title": "Descriptive title", 
-                    "description": "This is a sample file for testing purposes", 
-                    "category": "website", 
-                    "priority": "0" 
+                    "link": "https://web.archive.org/web/20240226074016/https://thestorageadvantage.com/", 
+                    "title": "The Storage Advantage", 
+                    "description": "I created several custom pages for this site, which is owned by The Atomic Storage Group, a management company that handles self storage facilities. In the case of this site, they requested the creation of custom landing pages for certain groups of facilities, which they ussed for their PPC campaigns."
                 },
                 { 
-                    "name": "MyFile3", 
+                    "name": "A Storage Place",
                     "file": "myfile2.txt", 
                     "id": "2000", 
-                    "link": "https://example.com/myfile2.txt", 
-                    "title": "Descriptive title", 
-                    "description": "This is another sample file for testing purposes", 
-                    "category": "print", 
-                    "priority": "1" 
-                }
+                    "link": "https://aspselfstorage.com/",
+                    "title": "A Storage Place",
+                    "description": "A Storage Place was a long-term Automatit customer, and their site was redeveloped several times over the course of the years. My contributions were primarily heavy customizations to the facility pages, adding custom logic for the display of unit information and reservation/rental process handling on a facility-by-facility basis. I also helped optimize the current version of the site, with updates that considerably improved the Lighthouse score of several key pages."
+                },
+                { 
+                    "name": "Maple Leaf Storage", 
+                    "file": "myfile2.txt", 
+                    "id": "2000", 
+                    "link": "https://xpress-storage.com/", 
+                    "title": "Maple Leaf Storage", 
+                    "description": "While I did not participate in the development of this site, I took ownership of a complicated update that I feel reflects my familiarity with WordPress and my problem-solving skills.<br><br>This site was developed at a client's request in collaboration with a third-party WordPress development team. It utilizes a highly customized WordPress front-end. When a visitor chooses a preferred unit, they are handed off to a unit selection area developed by Automatit.<br><br>Years after the site was launched the client asked for an update to the unit selection process, as several of their facilities were now offering parking as well as self-storage units. Unfortunately, the developer that built the site had departed Automatit, and there was no documentation on how the integration between the WordPress platform and our code worked.<br><br>I dove into the update, determined how the unit information was stored and used by forms in the WordPress area, and made the necessary adjustments in both WordPress and our code to allow parking selections if they were available at a facility."
+                },
+                { 
+                    "name": "Xpress Self Storage", 
+                    "file": "myfile2.txt", 
+                    "id": "2000", 
+                    "link": "https://xpress-storage.com/", 
+                    "title": "Xpress Self Storage", 
+                    "description": "One of the team projects I assisted with at Automatit. I handled the coding for the home page."
+                },
+                { 
+                    "name": "Best Northwest Storage", 
+                    "file": "myfile2.txt", 
+                    "id": "2000", 
+                    "link": "https://web.archive.org/web/20241118072817/http://bestnorthweststorage.com/", 
+                    "title": "Xpress Self Storage", 
+                    "description": "One of the team projects I assisted with at Automatit. I handled the coding for the internal pages."
+                },
             ]
         },
         {
@@ -36,9 +56,7 @@
                     "id": "1234", 
                     "link": "https://example.com/myfile.txt", 
                     "title": "Descriptive title", 
-                    "description": "This is a sample file for testing purposes", 
-                    "category": "website", 
-                    "priority": "0" 
+                    "description": "This is a sample file for testing purposes"
                 },
                 { 
                     "name": "MyFile3", 
@@ -46,9 +64,7 @@
                     "id": "2000", 
                     "link": "https://example.com/myfile2.txt", 
                     "title": "Descriptive title", 
-                    "description": "This is another sample file for testing purposes", 
-                    "category": "print", 
-                    "priority": "1" 
+                    "description": "This is another sample file for testing purposes"
                 }
             ]       
         }

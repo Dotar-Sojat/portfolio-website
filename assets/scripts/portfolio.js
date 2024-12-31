@@ -3,7 +3,6 @@
       .then(response => response.json())
       .then(data => {
         const portfolioItems = document.getElementById('portfolio-items');
-        console.log(data.portfolio_samples);
         data.portfolio_samples.forEach(item => {
             const portfolioSection = document.createElement('div');
             const portfolioItemsWrapper = document.createElement('div');
