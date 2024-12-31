@@ -1,0 +1,56 @@
+{ 
+    "portfolio_samples": [
+        {
+            "category": "Websites",
+            "description": "Some websites I made",
+            "samples": [
+                { 
+                    "name": "MyFile", 
+                    "file": "myfile.txt", 
+                    "id": "1234", 
+                    "link": "https://example.com/myfile.txt", 
+                    "title": "Descriptive title", 
+                    "description": "This is a sample file for testing purposes", 
+                    "category": "website", 
+                    "priority": "0" 
+                },
+                { 
+                    "name": "MyFile3", 
+                    "file": "myfile2.txt", 
+                    "id": "2000", 
+                    "link": "https://example.com/myfile2.txt", 
+                    "title": "Descriptive title", 
+                    "description": "This is another sample file for testing purposes", 
+                    "category": "print", 
+                    "priority": "1" 
+                }
+            ]
+        },
+        {
+            "category": "Print",
+            "description": "Some print items I made",
+            "samples": [
+                { 
+                    "name": "MyFile", 
+                    "file": "myfile.txt", 
+                    "id": "1234", 
+                    "link": "https://example.com/myfile.txt", 
+                    "title": "Descriptive title", 
+                    "description": "This is a sample file for testing purposes", 
+                    "category": "website", 
+                    "priority": "0" 
+                },
+                { 
+                    "name": "MyFile3", 
+                    "file": "myfile2.txt", 
+                    "id": "2000", 
+                    "link": "https://example.com/myfile2.txt", 
+                    "title": "Descriptive title", 
+                    "description": "This is another sample file for testing purposes", 
+                    "category": "print", 
+                    "priority": "1" 
+                }
+            ]       
+        }
+    ]
+}
