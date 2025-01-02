@@ -15,10 +15,14 @@
               const portfolioItem = document.createElement('div'); 
               portfolioItem.classList.add('portfolio-item');
               portfolioItem.innerHTML = `
-                <img src="${sample.file}" alt="${sample.name}">
-                <h4>${sample.title}</h4>
-                <p>${sample.description}</p>
-                <a href="${sample.link}">View Link</a>
+                <div class="portfolio-item-image">
+                  <img src="${sample.file}" alt="${sample.name}">
+                </div>
+                <div class="portfolio-item-content">
+                  <h4>${sample.title}</h4>
+                  <p>${sample.description}</p>
+                  <a href="${sample.link}">View Link</a>
+                </div>
               `;
               portfolioItemsWrapper.appendChild(portfolioItem); 
             });

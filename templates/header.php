@@ -1,4 +1,7 @@
     <script src="/assets/scripts/script.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Libre+Caslon+Text:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -6,33 +9,7 @@
         <div id="page_header">
             <div class="container">
                 <div id="page_banner_top" class="page_banner">
-                    <div id="logo">Logo</div>
-                    <div id="nav_header">
-                        <nav>
-                            <ul class="navmenu">
-                                <li>
-                                    <a href="/">Home</a>
-                                </li>
-                                <li>
-                                    <a href="/about-me">About Me</a>
-                                </li>
-                                <li>
-                                    <a href="/portfolio">Portfolio</a>
-                                    <ul class="navmenu_sub">
-                                        <li>
-                                            <a href="/websites">Websites</a>
-                                        </li>
-                                        <li>
-                                            <a href="/print">Print</a>
-                                        </li>
-                                        <li>
-                                            <a href="/other">Other</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <div id="logo">joemacnish.com</div>
                 </div>
             </div>
         </div>
