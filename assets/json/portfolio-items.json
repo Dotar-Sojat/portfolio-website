@@ -1,7 +1,7 @@
 { 
     "portfolio_samples": [
         {
-            "category": "websites",
+            "category": "Websites",
             "description": "These are several of the websites sites I've contributed to. Some of them are no longer available in the versions I worked on, as Automatit, the company hosting most of these sites, closed its doors in January 2025. In those cases, I've linked to archived versions of the sites via the Internet Archive.", 
             "samples": [
                 { 
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "category": "other",
+            "category": "Other",
             "description": "As well as websites, there are some other items I've worked on.",
             "samples": [
                 { 

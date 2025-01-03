@@ -10,17 +10,17 @@
 
             <div class="container">
 
-                <p id="last_update">last updated: 1/03/2025</p>
+                <p id="last_update">Last Updated: 1/03/2025</p>
 
                 <p>Hello and welcome to my site, hand-coded in PHP, HTML, CSS and a bit of vanilla Javascript.  If you'd like to see the code behind it all, you can take a look at the files on GitHub <a href="https://github.com/Dotar-Sojat/portfolio-website" target="_blank">here</a>.
 
-                <p>Below you'll find examples of some of the work I've done in <a href="#websites">web development</a>, and even a little <a href="#other">print work</a> I did. If you'd like to contact me for a copy of my resume or if you have any questions, please reach out to me at <a href="mailto:wmacnish@gmail.com">wmacnish@gmail.com</a>, or visit my LinkedIn profile: <a href="https://www.linkedin.com/in/william-macnish/">linkedin.com/in/william-macnish</a></p>
+                <p>Below you'll find examples of some of the work I've done in <a href="#Websites">web development</a>, and even a little <a href="#Other">print work</a> I did. If you'd like to contact me for a copy of my resume or if you have any questions, please reach out to me at <a href="mailto:wmacnish@gmail.com">wmacnish@gmail.com</a>, or visit my LinkedIn profile: <a href="https://www.linkedin.com/in/william-macnish/">linkedin.com/in/william-macnish</a></p>
 
-                <h3>wait a minute, are you "William" or "Joe"?</h3>
+                <h3>Wait a minute, are you "William" or "Joe"?</h3>
 
                 <p>Technically, the name is William Morgan MacNish. But I've been going by "Joe" since I was a little kid, and it's stuck. I feel more like a "Joe" than a "Bill" anyway.</p>
 
-                <h3>well, what do you know, Joe?</h3>
+                <h3>Well, what do you know, Joe?</h3>
 
                 <p>My skill set is diverse and continually evolving, with a background that combines marketing, web development, and customer support. Throughout my career, I've developed a strong foundation in both technical and soft skills, with a focus on adaptability and continuous learning.</p>
 
@@ -43,7 +43,7 @@
 
                 <p>I have a passion for learning and continuously improving my skill set. Currently, I am focused on learning React and exploring the use of AI in web development to enhance efficiency and innovation.</p>
 
-                <h2>my portfolio</h2>
+                <h2>My Portfolio</h2>
 
                 <div id="portfolio-items"></div>
 
