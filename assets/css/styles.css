@@ -63,19 +63,21 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 h4 {
   font-size: 1.25em;
+  font-weight: 600;
+  color: #000;
 }
 
 p {
@@ -98,6 +100,27 @@ p {
   max-width: 1000px;
   width: auto;
   margin: 0 auto;
+}
+
+#last_update {
+  font-weight: 300;
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 2em;
+  color: #666;
+}
+
+#skills_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 50px 0 50px 100px;
+}
+#skills_list li {
+  width: 30%;
+  line-height: 1.75em;
 }
 
 #portfolio-items .portfolio-section .portfolio-item {

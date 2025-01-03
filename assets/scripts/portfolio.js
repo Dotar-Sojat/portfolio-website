@@ -9,7 +9,7 @@
             portfolioSection.classList.add('portfolio-section');
             portfolioItemsWrapper.classList.add('portfolio-items'); 
             portfolioSection.innerHTML = `
-              <h3>${item.category}</h3>
+              <h3 id="${item.category}">${item.category}</h3>
               <p>${item.description}</p>`;
             item.samples.forEach(sample => {
               const portfolioItem = document.createElement('div'); 
@@ -19,7 +19,7 @@
                   <img src="${sample.file}" alt="${sample.name}">
                 </div>
                 <div class="portfolio-item-content">
-                  <h4>${sample.title}</h4>
+                  <h4 id="${sample.name}">${sample.title}</h4>
                   <p>${sample.description}</p>
                   <a href="${sample.link}">View Link</a>
                 </div>
