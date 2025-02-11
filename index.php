@@ -3,14 +3,14 @@
 <head>
 	<title>Portfolio of William MacNish - Front End Web Developer, etc.</title>
 
-    <?php include "templates/header.php" ?>
+    <?php include "./templates/header.php" ?>
 
     <main>
         <div id="page-content">
 
             <div class="container">
 
-                <p id="last_update">Last Updated: 1/03/2025</p>
+                <p id="last_update">Last Updated: 1/04/2025</p>
 
                 <p>Hello and welcome to my site, hand-coded in PHP, HTML, CSS and a bit of vanilla Javascript.  If you'd like to see the code behind it all, you can take a look at the files on GitHub <a href="https://github.com/Dotar-Sojat/portfolio-website" target="_blank">here</a>.
 
@@ -45,12 +45,14 @@
 
                 <h2>My Portfolio</h2>
 
-                <div id="portfolio-items"></div>
+                <div id="portfolio-carousel" class="carousel">
+
+                </div>
 
             </div>
 
         </div>
     </main>
 
-    <?php include "templates/footer.php" ?>
+    <?php include "./templates/footer.php" ?>
 

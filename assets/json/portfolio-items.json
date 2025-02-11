@@ -1,64 +1,68 @@
 { 
     "portfolio_samples": [
         {
-            "category": "Websites",
-            "description": "These are several of the websites sites I've contributed to. Some of them are no longer available in the versions I worked on, as Automatit, the company hosting most of these sites, closed its doors in January 2025. In those cases, I've linked to archived versions of the sites via the Internet Archive.", 
-            "samples": [
-                { 
-                    "name": "a_storage_place",
-                    "file": "/assets/images/thumb_aspselfstorage.jpg", 
-                    "id": "1010", 
-                    "link": "https://aspselfstorage.com/",
-                    "title": "A Storage Place",
-                    "description": "A Storage Place was a long-term Automatit customer, and their site was redeveloped several times over the course of the years. My contributions were primarily heavy customizations to the facility pages, adding custom logic for the display of unit information and reservation/rental process handling on a facility-by-facility basis. I also helped optimize the current version of the site, with updates that considerably improved the Lighthouse score of several key pages."
-                },
-                { 
-                    "name": "the_storage_advantage", 
-                    "file": "/assets/images/thumb_thestorageadvantage.jpg", 
-                    "id": "1000", 
-                    "link": "https://web.archive.org/web/20240226074016/https://thestorageadvantage.com/", 
-                    "title": "The Storage Advantage", 
-                    "description": "I created several custom pages for this site, which is owned by The Atomic Storage Group, a management company that handles self storage facilities. In the case of this site, they requested the creation of custom landing pages for certain groups of facilities, which they used for their PPC campaigns."
-                },
-                { 
-                    "name": "maple_leaf_storage", 
-                    "file": "/assets/images/thumb_mapleleaf.jpg", 
-                    "id": "1020", 
-                    "link": "https://www.mapleleafstorage.com/", 
-                    "title": "Maple Leaf Storage", 
-                    "description": "While I did not participate in the development of this site, I took ownership of a complicated update that I feel reflects my familiarity with WordPress and my problem-solving skills.<br><br>This site was developed at a client's request in collaboration with a third-party WordPress development team. It utilizes a highly customized WordPress front-end. When a visitor chooses a preferred unit, they are handed off to a unit selection area developed by Automatit.<br><br>Years after the site was launched the client asked for an update to the unit selection process, as several of their facilities were now offering parking as well as self-storage units. Unfortunately, the developer that built the site had departed Automatit, and there was no documentation on how the integration between the WordPress platform and our code worked.<br><br>I dove into the update, determined how the unit information was stored and used by forms in the WordPress area, and made the necessary adjustments in both WordPress and our code to allow parking selections if they were available at a facility."
-                },
-                { 
-                    "name": "xpress_self_storage", 
-                    "file": "/assets/images/thumb_express.jpg", 
-                    "id": "1030", 
-                    "link": "https://xpress-storage.com/", 
-                    "title": "Xpress Self Storage", 
-                    "description": "One of the team projects I assisted with at Automatit. I handled the coding for the home page."
-                },
-                { 
-                    "name": "best_northwest_storage", 
-                    "file": "/assets/images/thumb_bestnorthwest.jpg", 
-                    "id": "1040", 
-                    "link": "https://web.archive.org/web/20241118072817/http://bestnorthweststorage.com/", 
-                    "title": "Best Northwest Self Storage", 
-                    "description": "One of the team projects I assisted with at Automatit. I handled the coding for the internal pages."
-                }
-            ]
+            "name": "a_storage_place",
+            "category": "websites",
+            "file": "/assets/images/thumb_aspselfstorage.jpg", 
+            "id": "1010", 
+            "link": "https://aspselfstorage.com/",
+            "title": "A Storage Place",
+            "description": "A Storage Place was a long-term Automatit customer, and their site was redeveloped several times over the course of the years. My contributions were primarily heavy customizations to the facility pages, adding custom logic for the display of unit information and reservation/rental process handling on a facility-by-facility basis. I also helped optimize the current version of the site, with updates that considerably improved the Lighthouse score of several key pages."
         },
-        {
-            "category": "Other",
-            "description": "As well as websites, there are some other items I've worked on.",
-            "samples": [
-                { 
-                    "name": "leverage", 
-                    "file": "/assets/images/thumb_leverage.jpg", 
-                    "id": "1050", 
-                    "link": "https://trackersuite.net/pdf/Leverage_v11.pdf", 
-                    "title": "Leverage (company newsletter)", 
-                    "description": "Leverage was a 8 page company newsletter available in both print and online. I wrote the articles, managed the layout and artwork (and in the case of the sample here, drew the cover art). I even wrote the comic on the back page (artwork by the extremely talented <a href=\"https://www.instagram.com/joeforkan/\" target=\"_blank\">Joe Forkan</a>)"
-                }
-            ]       
+        { 
+            "name": "the_storage_advantage",
+            "category": "websites",
+            "file": "/assets/images/thumb_thestorageadvantage.jpg", 
+            "id": "1020", 
+            "link": "https://web.archive.org/web/20240226074016/https://thestorageadvantage.com/", 
+            "title": "The Storage Advantage", 
+            "description": "I created several custom pages for this site, which is owned by The Atomic Storage Group, a management company that handles self storage facilities. In the case of this site, they requested the creation of custom landing pages for certain groups of facilities, which they used for their PPC campaigns."
+        },
+        { 
+            "name": "xpress_self_storage",
+            "category": "websites",
+            "file": "/assets/images/thumb_express.jpg", 
+            "id": "1030", 
+            "link": "https://xpress-storage.com/", 
+            "title": "Xpress Self Storage", 
+            "description": "One of the team projects I assisted with at Automatit. I handled the coding for the home page."
+        },
+        { 
+            "name": "best_northwest_storage",
+            "category": "websites",
+            "file": "/assets/images/thumb_bestnorthwest.jpg", 
+            "id": "1040", 
+            "link": "https://web.archive.org/web/20241118072817/http://bestnorthweststorage.com/", 
+            "title": "Best Northwest Self Storage", 
+            "description": "One of the team projects I assisted with at Automatit. I handled the coding for the internal pages."
+        },
+
+        { 
+            "name": "tucson_games_and_gadgets",
+            "category": "wordpress",
+            "file": "/assets/images/thumb_leverage.jpg", 
+            "id": "1050", 
+            "link": "https://trackersuite.net/pdf/Leverage_v11.pdf", 
+            "title": "Leverage (company newsletter)", 
+            "description": "Leverage was a 8 page company newsletter available in both print and online. I wrote the articles, managed the layout and artwork (and in the case of the sample here, drew the cover art). I even wrote the comic on the back page (artwork by the extremely talented <a href=\"https://www.instagram.com/joeforkan/\" target=\"_blank\">Joe Forkan</a>)"
+        },
+        { 
+            "name": "maple_leaf_storage",
+            "category": "wordpress",
+            "file": "/assets/images/thumb_mapleleaf.jpg", 
+            "id": "1060", 
+            "link": "https://www.mapleleafstorage.com/", 
+            "title": "Maple Leaf Storage", 
+            "description": "While I did not participate in the development of this site, I took ownership of a complicated update that I feel reflects my familiarity with WordPress and my problem-solving skills.<br><br>This site was developed at a client's request in collaboration with a third-party WordPress development team. It utilizes a highly customized WordPress front-end. When a visitor chooses a preferred unit, they are handed off to a unit selection area developed by Automatit.<br><br>Years after the site was launched the client asked for an update to the unit selection process, as several of their facilities were now offering parking as well as self-storage units. Unfortunately, the developer that built the site had departed Automatit, and there was no documentation on how the integration between the WordPress platform and our code worked.<br><br>I dove into the update, determined how the unit information was stored and used by forms in the WordPress area, and made the necessary adjustments in both WordPress and our code to allow parking selections if they were available at a facility."
+        },
+        { 
+            "name": "leverage",
+            "category": "other",
+            "file": "/assets/images/thumb_leverage.jpg", 
+            "id": "1070", 
+            "link": "https://trackersuite.net/pdf/Leverage_v11.pdf", 
+            "title": "Leverage (company newsletter)", 
+            "description": "Leverage was a 8 page company newsletter available in both print and online. I wrote the articles, managed the layout and artwork (and in the case of the sample here, drew the cover art). I even wrote the comic on the back page (artwork by the extremely talented <a href=\"https://www.instagram.com/joeforkan/\" target=\"_blank\">Joe Forkan</a>)"
         }
-    ]
+    ]       
 }

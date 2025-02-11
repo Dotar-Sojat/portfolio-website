@@ -36,29 +36,31 @@
   //     });
   // }
 
-  function organizePortfolioItems(categories) {
-    let categorizedItems = [];
-    categories.forEach(category => {
-      categorizedItems[category] = [];
-    });
+  function buildCarousel(caroEl,caroContent) {
 
-    fetch('/assets/json/portfolio-items.json')
-      .then(response => response.json())
-      .then(data => {
-        data.portfolio_samples.forEach(item => {
-          for (let i=0; i<categories.length; ++i) {
-            if (categories[i].toLowerCase() == item.category) {
-              categorizedItems[categories[i]].push(item);
-              break;
-            }
-          };
-        });         
-      })
-      .catch(error => {
-        console.error('Error fetching portfolio data:', error);
-      });
-    return categorizedItems;
+    const caroCategories =  Object.keys(caroContent);
+    const caroContainerDiv = document.getElementById(caroEl);
+    const caroCategoriesDiv = document.createElement('div');
+    const caroDisplayDiv = document.createElement('div');
+    const caroLeftBut = document.createElement('button');
+    const caroRightBut = document.createElement('button');
+    const caroDotsDiv = document.createElement('div');
+
+    caroCategories.forEach(cat => {
+        let catLink = document.createElement('button');
+        
+    })
+
+//     let caroIndex = 0;
+//     caroContent.forEach(cat => {
+//         let caroDot = document.createElement('button');
+//         caroDot.setAttribute('data-index',caroIndex);
+//         caroButtons.appendChild(caroDot);
+//         caroIndex++;
+//     });
+//     caroArrowLeft.classList.add('caro-arrow-left');
+//     caroArrowRight.classList.add('caro-arrow-right');
+//     caroContainer.appendChild(caroArrowLeft,caroArrowRight,caroDisplay,caroButtons);
   }
 
-  export { organizePortfolioItems };
-
+  export { buildCarousel };
