@@ -45,8 +45,8 @@
 
                 <h2>My Portfolio</h2>
 
-                <div id="portfolio-carousel" class="carousel">
-
+                <div id="home-carousel-section">
+                    <div id="portfolio-carousel" class="carousel"></div>
                 </div>
 
             </div>

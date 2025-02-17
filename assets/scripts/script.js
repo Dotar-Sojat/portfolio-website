@@ -1,10 +1,8 @@
-import { setElAttributes } from './utilities.js';
-import { organizePortfolioItems } from './portfolio.js';
 import { buildCarousel } from './carousel.js';
 
-window.addEventListener('load', () => {
+buildCarousel('portfolio-carousel', 'portfolio-items', ['Websites','WordPress','Other']);
 
-    buildCarousel('portfolio-carousel',organizePortfolioItems(['Websites','WordPress','Other']));
+window.addEventListener('load', () => {
 
     const anchorTags = document.querySelectorAll('a');
 
