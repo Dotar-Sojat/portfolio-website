@@ -4,6 +4,12 @@ function setElAttributes(el, attributes) {
     }
 }
 
+function setElStyles(el, styles) {
+  for (let key in styles) {
+      el.style[key] = [styles[key]];
+  }
+}
+
 function getJSONData(sourcefile) {
     return fetch('/assets/json/'+sourcefile+'.json')
       .then(response => response.json())
@@ -13,4 +19,4 @@ function getJSONData(sourcefile) {
       });
   }
 
-export { setElAttributes,getJSONData };
+export { setElAttributes, setElStyles, getJSONData };

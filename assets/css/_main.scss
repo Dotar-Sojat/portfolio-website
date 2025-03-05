@@ -103,7 +103,7 @@ p {
             justify-content: space-between;
             margin-bottom: 50px;
 
-            &+ .portfolio-item {
+            &+.portfolio-item {
                 padding-top: 50px;
                 border-style: solid;
                 border-width: 1px 0 0 0;
@@ -125,6 +125,12 @@ p {
         }
 
     }
+}
+
+#portfolio-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1175px) {
