@@ -1,3 +1,10 @@
+
+:root {
+    --lightgrey: #999;
+    --darkgrey: #666;
+    --darkergrey: #333;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -8,7 +15,7 @@ body {
 h1,h2,h3,h4 {
     font-weight: 300;
     margin-bottom: .75em;
-    color: #666;
+    color: var(--darkgrey);
 }
 
 h1 {
@@ -26,7 +33,7 @@ h3 {
 h4 {
     font-size: 1.25em;
     font-weight: 600;
-    color: #000;
+    color: var(--darkergrey);
 }
 
 p {
@@ -60,7 +67,7 @@ p {
     font-size: .9em;
     font-style: italic;
     margin-bottom: 2em;
-    color: #666;
+    color: var(--lightgray);
 }
 
 #skills_list {
@@ -131,6 +138,19 @@ p {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+
+    .caro-display-div {
+        max-width: 800px;
+        height: 400px;
+    }
+
+    .caro-slides-div {
+        transition: transform 1.5s ease-in-out;
+
+        .caro-slide {
+            width: 800px;
+        }
+    }
 }
 
 @media screen and (max-width: 1175px) {

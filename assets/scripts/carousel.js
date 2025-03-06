@@ -68,6 +68,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
             'data-cat-end': categoryIndexPosition + categorizedItems[category].length -1,
             'class':'caro-category'
           });
+          if (categoryIndexPosition === 0) categoryBtn.classList.add('active');
           categoryBtn.addEventListener('click',selectSlide);
           caroCategoriesDiv.appendChild(categoryBtn);
           categoryIndexPosition = categoryIndexPosition + categorizedItems[category].length;
@@ -103,16 +104,16 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
             'class':'caro-description-btn',
             'aria-label': 'View information about slide ' + slideIndex + 1
         });
-        caroDescriptionBtn.addEventListener('click',seeCaroDescription);    
+        caroDescriptionBtn.addEventListener('click',toggleCaroDescription);   
+
         let caroDot = document.createElement('button');
         setElAttributes(caroDot, {
             'data-dot-index':slideIndex,
             'class':'caro-dot',
             'aria-label': 'View slide ' + slideIndex + 1
         });
-        caroDot.addEventListener('click', (e) => {
-          selectSlide(e.target,caroEl);
-        });
+        
+        caroDot.addEventListener('click',selectSlide);
 
         caroSlide.append(caroImage,caroDescriptionBtn,caroDescription);
         caroSlidesDiv.appendChild(caroSlide);
@@ -125,7 +126,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
       console.error('Error in buildCarousel:', error);
     });
 
-    function toggleCaroDescription(slideIndex) {
+    function toggleCaroDescription(e) {
       let slideInfoBtn = e.target;
       let slideDescription = slideInfoBtn.parentElement.querySelector('.caro-description');
       slideInfoBtn.classList.toggle('active');
@@ -134,11 +135,11 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
     function getCaroInfo(caro) {
       let caroObject = {
+        'caroCategories': caro.querySelector('.caro-categories-div'),
         'slidesDiv': caro.querySelector('.caro-slides-div'),
-        'slideCount': caro.querySelectorAll('.caro-slide').length,
+        'slides': caro.querySelectorAll('.caro-slide'),
         'slideWidth': caro.querySelector('.caro-display-div').offsetWidth,
-        'activeSlide': caro.querySelector('.caro-slide.active').getAttribute('data-slide-index'),
-        'activeDescription':caro.querySelector('.caro-description.active')
+        'activeSlide': parseInt(caro.querySelector('.caro-slide.active').getAttribute('data-slide-index'))
       }
       return caroObject;
     }
@@ -150,9 +151,9 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
       if (clickedEl.classList.contains('caro-dir-btn')) {
         if (clickedEl.classList.contains('caro-left')) {
-          newIndex = thisCaro.activeSlide - 1 >= 0 ? thisCaro.activeSlide - 1 : thisCaro.slideCount -1;
+          newIndex = thisCaro.activeSlide - 1 >= 0 ? thisCaro.activeSlide - 1 : thisCaro.slides.length - 1;
         } else {
-          newIndex = thisCaro.activeSlide + 1 <= thisCaro.slideCount - 1 ? thisCaro.activeSlide + 1 : 0;
+          newIndex = thisCaro.activeSlide + 1 <= thisCaro.slides.length - 1 ? thisCaro.activeSlide + 1 : 0;
         }
       } else if (clickedEl.classList.contains('caro-dot')) {
           newIndex = clickedEl.getAttribute('data-dot-index');
@@ -164,21 +165,27 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
     function moveCarousel(caro,destinationIndex) {
 
-      let currentPosition = caro.activeSlide * caro.slideWidth;
-      let newPosition = destinationIndex * caro.slideWidth;
-      let slideMovement = currentPosition - newPosition;
+      let currentSlide = caro.slides[caro.activeSlide];
+      let destinationSlide = caro.slides[destinationIndex];
 
-      console.log('currentPosition: ' + currentPosition);
-      console.log('newPosition: ' + newPosition);
-      console.log('slideMovement: ' + slideMovement);
-    
       setElStyles(caro.slidesDiv, {  
-        'transform':'translateX(' + slideMovement + 'px)'
+        'transform':'translateX(' + destinationSlide.offsetLeft * -1 + 'px)'
       });
-    }
 
-    function seeCaroDescription() {
+      currentSlide.classList.remove('active');
+      if (currentSlide.querySelector('.caro-description').classList.contains('active')) {
+        currentSlide.querySelector('.caro-description').classList.remove('active');
+        currentSlide.querySelector('.caro-description-btn').classList.remove('active');
+      }
+      destinationSlide.classList.add('active');
 
+      if (caro.caroCategories !== null) {
+        let categoryOptions = caro.caroCategories.querySelectorAll('.caro-category');
+        categoryOptions.forEach(cat => {
+          cat.classList.remove('active');
+          if (destinationIndex >= cat.getAttribute('data-cat-start') && destinationIndex <= cat.getAttribute('data-cat-end')) cat.classList.add('active');
+        });
+      }
     }
 
 }

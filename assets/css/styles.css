@@ -49,6 +49,12 @@ table {
   border-spacing: 0;
 }
 
+:root {
+  --lightgrey: #999;
+  --darkgrey: #666;
+  --darkergrey: #333;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -59,7 +65,7 @@ body {
 h1, h2, h3, h4 {
   font-weight: 300;
   margin-bottom: 0.75em;
-  color: #666;
+  color: var(--darkgrey);
 }
 
 h1 {
@@ -77,7 +83,7 @@ h3 {
 h4 {
   font-size: 1.25em;
   font-weight: 600;
-  color: #000;
+  color: var(--darkergrey);
 }
 
 p {
@@ -110,7 +116,7 @@ p + h2, p + h3, p + h4 {
   font-size: 0.9em;
   font-style: italic;
   margin-bottom: 2em;
-  color: #666;
+  color: var(--lightgray);
 }
 
 #skills_list {
@@ -170,6 +176,16 @@ p + h2, p + h3, p + h4 {
   max-width: 1000px;
   margin: 0 auto;
 }
+#portfolio-carousel .caro-display-div {
+  max-width: 800px;
+  height: 400px;
+}
+#portfolio-carousel .caro-slides-div {
+  transition: transform 1.5s ease-in-out;
+}
+#portfolio-carousel .caro-slides-div .caro-slide {
+  width: 800px;
+}
 
 @media screen and (max-width: 1175px) {
   #logo {
@@ -216,9 +232,7 @@ p + h2, p + h3, p + h4 {
 }
 .carousel .caro-display-div {
   position: relative;
-  max-width: 800px;
   width: 100%;
-  height: 400px;
   overflow: hidden;
   z-index: 100;
   margin: 0 auto;
@@ -233,10 +247,9 @@ p + h2, p + h3, p + h4 {
   flex-wrap: nowrap;
   justify-content: left;
   align-items: center;
-  transition: transform 1.5s ease-in-out;
 }
 .carousel .caro-slides-div .caro-slide {
-  width: 800px;
+  width: 100%;
   margin: 0;
   position: relative;
 }
@@ -251,17 +264,17 @@ p + h2, p + h3, p + h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 .carousel .caro-slides-div .caro-slide .caro-description.active {
-  display: block;
+  display: flex;
 }
 .carousel .caro-slides-div .caro-slide .caro-description p {
   color: #fff;
   text-align: center;
+  width: 90%;
 }
 .carousel .caro-slides-div .caro-slide .caro-description-btn {
   position: absolute;
@@ -269,10 +282,10 @@ p + h2, p + h3, p + h4 {
   right: 10px;
   width: 32px;
   height: 32px;
-  border: 2px solid #000;
+  border: 2px solid var(--darkergrey);
   border-radius: 16px;
   text-align: center;
-  background-color: #000;
+  background-color: var(--darkergrey);
   outline: none;
   font-size: 0;
   color: #fff;
@@ -282,25 +295,26 @@ p + h2, p + h3, p + h4 {
 .carousel .caro-slides-div .caro-slide .caro-description-btn:before {
   content: "i";
   display: block;
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 700;
   font-size: 18px;
-  font-weight: 800;
   color: #fff;
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 11px;
+  top: 4px;
 }
 .carousel .caro-slides-div .caro-slide .caro-description-btn.active {
   background-color: #fff;
 }
 .carousel .caro-slides-div .caro-slide .caro-description-btn.active:before {
-  color: #000;
+  color: var(--darkergrey);
 }
 .carousel .caro-dir-btn {
   position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100px;
+  width: 50px;
   box-sizing: border-box;
   padding: 0;
   height: 100%;
@@ -329,9 +343,29 @@ p + h2, p + h3, p + h4 {
   flex-direction: row;
   justify-content: right;
   right: 0;
-  top: 0;
-  padding: 16px 0;
+  top: -75px;
   z-index: 500;
+}
+.carousel .caro-categories-div button {
+  font-size: 24px;
+  color: var(--lightgrey);
+  border: 2px solid var(--lightgrey);
+  border-radius: 18px;
+  background: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.carousel .caro-categories-div button.active {
+  border-color: var(--darkgrey);
+  color: var(--darkgrey);
+}
+.carousel .caro-categories-div button + button {
+  margin-left: 24px;
+}
+.carousel .caro-categories-div button:hover {
+  color: #fff;
+  background: var(--lightgrey);
+  border-color: var(--lightgrey);
 }
 .carousel .caro-dots-div {
   position: absolute;

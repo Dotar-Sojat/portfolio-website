@@ -5,9 +5,7 @@
 
     .caro-display-div {
         position: relative;
-        max-width: 800px;
         width: 100%;
-        height: 400px;
         overflow: hidden;
         z-index: 100;
         margin: 0 auto;
@@ -23,10 +21,9 @@
         flex-wrap: nowrap;
         justify-content: left;
         align-items: center;
-        transition: transform 1.5s ease-in-out;
         
         .caro-slide {
-            width: 800px;
+            width: 100%;
             margin: 0;
             position: relative;
 
@@ -42,18 +39,18 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: rgba(0,0,0,0);
+                background-color: rgba(0,0,0,.55);
 
                 &.active {
-                    display: block;
+                    display: flex;
                 }
 
                 p {
                     color: #fff;
                     text-align: center;
+                    width: 90%;
                 }
             }
 
@@ -63,10 +60,10 @@
                 right: 10px;
                 width: 32px;
                 height: 32px;
-                border: 2px solid #000;
+                border: 2px solid var(--darkergrey);
                 border-radius: 16px;
                 text-align: center;;
-                background-color: #000;
+                background-color: var(--darkergrey);
                 outline: none;
                 font-size: 0;
                 color: #fff;
@@ -76,19 +73,20 @@
                 &:before {
                     content:'i';
                     display: block;
+                    font-family: "Libre Caslon Text", serif;
+                    font-weight: 700;
                     font-size: 18px;
-                    font-weight: 800;
                     color: #fff;
                     position: absolute;
-                    left: 10px;
-                    top: 10px;
+                    left: 11px;
+                    top: 4px;
                 }
 
                 &.active {
                     background-color: #fff;
 
                     &:before {
-                        color: #000;
+                        color: var(--darkergrey);
                     }
                 }
             }
@@ -100,7 +98,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 100px;
+        width: 50px;
         box-sizing: border-box;
         padding: 0;
         height: 100%;
@@ -132,11 +130,34 @@
         flex-direction: row;
         justify-content: right;
         right: 0;
-        top: 0;
-        padding: 16px 0;
+        top: -75px;
         z-index: 500;
-    }
 
+        button {
+            font-size: 24px;
+            color: var(--lightgrey);
+            border: 2px solid var(--lightgrey);
+            border-radius: 18px;
+            background: transparent;
+            padding: 5px 10px;
+            cursor: pointer;
+
+            &.active {
+                border-color: var(--darkgrey);
+                color: var(--darkgrey);
+            }
+
+            &+button {
+                margin-left: 24px;
+            }
+
+            &:hover {
+                color: #fff;
+                background: var(--lightgrey);
+                border-color: var(--lightgrey);
+            }
+        }
+    }
 
     .caro-dots-div {
         position: absolute;
