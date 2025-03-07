@@ -227,24 +227,40 @@ p + h2, p + h3, p + h4 {
     display: none;
     width: 0px;
   }
-  #portfolio-items .portfolio-section .portfolio-item {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  #portfolio-items .portfolio-section .portfolio-item .portfolio-item-content {
-    width: 100%;
-  }
-  #portfolio-items .portfolio-section .portfolio-item .portfolio-item-image {
-    margin: 50px 0 0 0;
-  }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 760px) {
   #logo {
     font-size: 48px;
     margin: 0 0 30px 0px;
   }
   #skills_list li {
     width: 100%;
+  }
+  #portfolio-carousel {
+    margin: 100px auto;
+  }
+  #portfolio-carousel .caro-display-div {
+    width: 100%;
+  }
+  #portfolio-carousel .caro-dir-btn {
+    bottom: -50px;
+    top: auto;
+    height: 50px;
+  }
+  #portfolio-carousel .caro-dir-btn.caro-left {
+    left: calc(50% - 75px);
+  }
+  #portfolio-carousel .caro-dir-btn.caro-right {
+    right: calc(50% - 75px);
+  }
+  #portfolio-carousel .caro-dots-div {
+    bottom: -100px;
+  }
+  #portfolio-carousel .caro-categories-div {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 500px) {
@@ -260,9 +276,8 @@ p + h2, p + h3, p + h4 {
 }
 .carousel .caro-display-div {
   position: relative;
-  width: 100%;
-  max-width: 850px;
-  height: 400px;
+  width: calc(100% - 100px);
+  padding: 0 0 46% 0;
   overflow: hidden;
   z-index: 100;
   margin: 0 auto;
@@ -274,8 +289,10 @@ p + h2, p + h3, p + h4 {
   white-space: nowrap;
   transition: transform 1.5s ease-in-out;
 }
+.carousel .caro-slides-div.inactive {
+  transition: none;
+}
 .carousel .caro-slides-div .caro-slide {
-  max-width: 850px;
   box-sizing: border-box;
   padding: 0 25px;
   width: 100%;
@@ -291,7 +308,9 @@ p + h2, p + h3, p + h4 {
   width: 100%;
 }
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description {
-  display: none;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
   position: absolute;
   white-space: normal;
   top: 0;
@@ -300,13 +319,15 @@ p + h2, p + h3, p + h4 {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.55);
+  background: rgba(51, 51, 51, 0.75);
+  background: radial-gradient(circle, rgba(51, 51, 51, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
 }
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description.active {
-  display: flex;
+  opacity: 1;
 }
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description p {
   color: #fff;
+  text-shadow: 2px 2px 2px #000;
   text-align: center;
   width: 90%;
 }
@@ -325,6 +346,8 @@ p + h2, p + h3, p + h4 {
   color: #fff;
   cursor: pointer;
   z-index: 1000;
+  transition: background-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:before {
   content: "i";

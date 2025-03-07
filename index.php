@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Portfolio of William MacNish - Front End Web Developer, etc.</title>
-
     <?php include "./templates/header.php" ?>
 
     <main>

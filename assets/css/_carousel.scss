@@ -6,9 +6,8 @@
 
     .caro-display-div {
         position: relative;
-        width: 100%;
-        max-width: 850px;
-        height: 400px;
+        width: calc(100% - 100px);
+        padding: 0 0 46% 0;
         overflow: hidden;
         z-index: 100;
         margin: 0 auto;
@@ -20,9 +19,12 @@
         left: 0;
         white-space: nowrap;
         transition: transform 1.5s ease-in-out;
+
+        &.inactive {
+            transition: none;
+        }
         
         .caro-slide {
-            max-width: 850px;
             box-sizing: border-box;
             padding: 0 25px;
             width: 100%;
@@ -39,7 +41,9 @@
                 }
 
                 .caro-description {
-                    display: none;
+                    display: flex;
+                    opacity: 0;
+                    transition: opacity .25s ease-in-out;
                     position: absolute;
                     white-space: normal;
                     top: 0;
@@ -48,14 +52,16 @@
                     height: 100%;
                     justify-content: center;
                     align-items: center;
-                    background-color: rgba(0,0,0,.55);
+                    background: rgba(51,51,51,.75);
+                    background: radial-gradient(circle, rgba(51,51,51,.75) 0%, rgba(0,0,0,.75) 100%);
 
                     &.active {
-                        display: flex;
+                        opacity: 1;
                     }
 
                     p {
                         color: #fff;
+                        text-shadow: 2px 2px 2px #000;
                         text-align: center;
                         width: 90%;
                     }
@@ -76,6 +82,8 @@
                     color: #fff;
                     cursor: pointer;
                     z-index: 1000;
+                    transition: background-color .25s ease-in-out;
+                    transition: color .25s ease-in-out;
 
                     &:before {
                         content:'i';

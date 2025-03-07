@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio of William MacNish - Front End Web Developer, etc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/assets/scripts/script.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
