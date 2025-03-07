@@ -135,20 +135,72 @@ p {
 }
 
 #portfolio-carousel {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-
-    .caro-display-div {
-        max-width: 800px;
-        height: 400px;
-    }
+    margin: 50px auto;
 
     .caro-slides-div {
-        transition: transform 1.5s ease-in-out;
-
+        
         .caro-slide {
-            width: 800px;
+
+            .caro-slide-content {
+
+                img {
+                    border: 1px solid var(--darkgrey);
+                }
+
+                .caro-description-btn {
+                    border: 2px solid var(--darkergrey);
+                    background-color: var(--darkergrey);
+
+                    &:before {
+                        font-family: "Libre Caslon Text", serif;
+                        font-weight: 700;
+                        font-size: 18px;
+                        left: 11px;
+                        top: 4px;
+                    }
+
+                    &.active {
+                        background-color: #fff;
+                        
+                        &:before {
+                            color: var(--darkergrey);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .caro-dir-btn {
+        color: var(--darkergrey);
+    }
+
+    .caro-categories-div {
+
+        button {
+            color: var(--lightgrey);
+            border: 2px solid var(--lightgrey);
+
+            &.active {
+                border-color: var(--darkgrey);
+                color: var(--darkgrey);
+            }
+
+            &:hover {
+                color: #fff;
+                background: var(--lightgrey);
+                border-color: var(--lightgrey);
+            }
+        }
+    }
+
+    .caro-dots-div {
+
+        .caro-dot {
+
+            &.active {
+                background-color: var(--darkgrey);
+            }
         }
     }
 }

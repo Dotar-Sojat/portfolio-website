@@ -85,6 +85,11 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
         });
         if (slideIndex === 0) caroSlide.classList.add('active');
 
+        let caroSlideContent = document.createElement('div');
+        setElAttributes(caroSlideContent,{
+            'class':'caro-slide-content'
+        });
+
         let caroImage = document.createElement('img');
         setElAttributes(caroImage, {
             'src':item.url,
@@ -102,7 +107,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
         let caroDescriptionBtn = document.createElement('button');
         setElAttributes(caroDescriptionBtn, {
             'class':'caro-description-btn',
-            'aria-label': 'View information about slide ' + slideIndex + 1
+            'aria-label': 'View information about slide ' + Number(slideIndex + 1)
         });
         caroDescriptionBtn.addEventListener('click',toggleCaroDescription);   
 
@@ -110,12 +115,14 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
         setElAttributes(caroDot, {
             'data-dot-index':slideIndex,
             'class':'caro-dot',
-            'aria-label': 'View slide ' + slideIndex + 1
+            'aria-label': 'View slide ' + Number(slideIndex + 1)
         });
-        
+        if (slideIndex === 0) caroDot.classList.add('active');
+
         caroDot.addEventListener('click',selectSlide);
 
-        caroSlide.append(caroImage,caroDescriptionBtn,caroDescription);
+        caroSlideContent.append(caroImage,caroDescriptionBtn,caroDescription);
+        caroSlide.append(caroSlideContent);
         caroSlidesDiv.appendChild(caroSlide);
         caroDotsDiv.appendChild(caroDot);
         slideIndex++;
@@ -179,9 +186,13 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
       }
       destinationSlide.classList.add('active');
 
+      caroDotsDiv.querySelectorAll('.caro-dot').forEach(dot => {
+        dot.classList.remove('active');
+        if (destinationIndex == dot.getAttribute('data-dot-index')) dot.classList.add('active');
+      });
+
       if (caro.caroCategories !== null) {
-        let categoryOptions = caro.caroCategories.querySelectorAll('.caro-category');
-        categoryOptions.forEach(cat => {
+        caro.caroCategories.querySelectorAll('.caro-category').forEach(cat => {
           cat.classList.remove('active');
           if (destinationIndex >= cat.getAttribute('data-cat-start') && destinationIndex <= cat.getAttribute('data-cat-end')) cat.classList.add('active');
         });

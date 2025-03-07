@@ -172,19 +172,46 @@ p + h2, p + h3, p + h4 {
 }
 
 #portfolio-carousel {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
-#portfolio-carousel .caro-display-div {
-  max-width: 800px;
-  height: 400px;
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content img {
+  border: 1px solid var(--darkgrey);
 }
-#portfolio-carousel .caro-slides-div {
-  transition: transform 1.5s ease-in-out;
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn {
+  border: 2px solid var(--darkergrey);
+  background-color: var(--darkergrey);
 }
-#portfolio-carousel .caro-slides-div .caro-slide {
-  width: 800px;
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:before {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 700;
+  font-size: 18px;
+  left: 11px;
+  top: 4px;
+}
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active {
+  background-color: #fff;
+}
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before {
+  color: var(--darkergrey);
+}
+#portfolio-carousel .caro-dir-btn {
+  color: var(--darkergrey);
+}
+#portfolio-carousel .caro-categories-div button {
+  color: var(--lightgrey);
+  border: 2px solid var(--lightgrey);
+}
+#portfolio-carousel .caro-categories-div button.active {
+  border-color: var(--darkgrey);
+  color: var(--darkgrey);
+}
+#portfolio-carousel .caro-categories-div button:hover {
+  color: #fff;
+  background: var(--lightgrey);
+  border-color: var(--lightgrey);
+}
+#portfolio-carousel .caro-dots-div .caro-dot.active {
+  background-color: var(--darkgrey);
 }
 
 @media screen and (max-width: 1175px) {
@@ -227,12 +254,15 @@ p + h2, p + h3, p + h4 {
 }
 .carousel {
   width: 100%;
-  height: 100%;
+  max-width: 1000px;
   position: relative;
+  margin: 0 auto;
 }
 .carousel .caro-display-div {
   position: relative;
   width: 100%;
+  max-width: 850px;
+  height: 400px;
   overflow: hidden;
   z-index: 100;
   margin: 0 auto;
@@ -241,25 +271,29 @@ p + h2, p + h3, p + h4 {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: row;
-  -ms-flex-align: center;
-  flex-wrap: nowrap;
-  justify-content: left;
-  align-items: center;
+  white-space: nowrap;
+  transition: transform 1.5s ease-in-out;
 }
 .carousel .caro-slides-div .caro-slide {
+  max-width: 850px;
+  box-sizing: border-box;
+  padding: 0 25px;
   width: 100%;
+  display: inline-block;
   margin: 0;
   position: relative;
 }
-.carousel .caro-slides-div .caro-slide img {
+.carousel .caro-slides-div .caro-slide .caro-slide-content {
+  position: relative;
+}
+.carousel .caro-slides-div .caro-slide .caro-slide-content img {
   display: block;
   width: 100%;
 }
-.carousel .caro-slides-div .caro-slide .caro-description {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description {
   display: none;
   position: absolute;
+  white-space: normal;
   top: 0;
   left: 0;
   width: 100%;
@@ -268,46 +302,45 @@ p + h2, p + h3, p + h4 {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.55);
 }
-.carousel .caro-slides-div .caro-slide .caro-description.active {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description.active {
   display: flex;
 }
-.carousel .caro-slides-div .caro-slide .caro-description p {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description p {
   color: #fff;
   text-align: center;
   width: 90%;
 }
-.carousel .caro-slides-div .caro-slide .caro-description-btn {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 35px;
   width: 32px;
   height: 32px;
-  border: 2px solid var(--darkergrey);
+  border: 2px solid #000;
   border-radius: 16px;
   text-align: center;
-  background-color: var(--darkergrey);
+  background-color: #000;
   outline: none;
   font-size: 0;
   color: #fff;
   cursor: pointer;
   z-index: 1000;
 }
-.carousel .caro-slides-div .caro-slide .caro-description-btn:before {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:before {
   content: "i";
   display: block;
-  font-family: "Libre Caslon Text", serif;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 18px;
   color: #fff;
   position: absolute;
-  left: 11px;
-  top: 4px;
+  left: 7px;
+  top: 7px;
 }
-.carousel .caro-slides-div .caro-slide .caro-description-btn.active {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active {
   background-color: #fff;
 }
-.carousel .caro-slides-div .caro-slide .caro-description-btn.active:before {
-  color: var(--darkergrey);
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before {
+  color: #000;
 }
 .carousel .caro-dir-btn {
   position: absolute;
@@ -328,13 +361,11 @@ p + h2, p + h3, p + h4 {
 .carousel .caro-dir-btn.caro-left {
   left: 0;
   justify-content: left;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255) 95%);
   padding-left: 10px;
 }
 .carousel .caro-dir-btn.caro-right {
   right: 0;
   justify-content: right;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 95%);
   padding-right: 10px;
 }
 .carousel .caro-categories-div {
@@ -348,24 +379,24 @@ p + h2, p + h3, p + h4 {
 }
 .carousel .caro-categories-div button {
   font-size: 24px;
-  color: var(--lightgrey);
-  border: 2px solid var(--lightgrey);
+  color: #666;
+  border: 2px solid #666;
   border-radius: 18px;
   background: transparent;
   padding: 5px 10px;
   cursor: pointer;
 }
 .carousel .caro-categories-div button.active {
-  border-color: var(--darkgrey);
-  color: var(--darkgrey);
+  border-color: #000;
+  color: #000;
 }
 .carousel .caro-categories-div button + button {
   margin-left: 24px;
 }
 .carousel .caro-categories-div button:hover {
   color: #fff;
-  background: var(--lightgrey);
-  border-color: var(--lightgrey);
+  background: #000;
+  border-color: #000;
 }
 .carousel .caro-dots-div {
   position: absolute;
@@ -381,12 +412,12 @@ p + h2, p + h3, p + h4 {
   z-index: 500;
 }
 .carousel .caro-dots-div .caro-dot {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   padding: 0;
   border: none;
-  border-radius: 4px;
-  margin: 0 8px;
+  border-radius: 6px;
+  margin: 0 12px;
 }
 .carousel .caro-dots-div .caro-dot.active {
   background-color: blue;

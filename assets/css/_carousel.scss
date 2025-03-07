@@ -1,11 +1,14 @@
 .carousel {
     width: 100%;
-    height: 100%;
+    max-width: 1000px;
     position: relative;
+    margin: 0 auto;
 
     .caro-display-div {
         position: relative;
         width: 100%;
+        max-width: 850px;
+        height: 400px;
         overflow: hidden;
         z-index: 100;
         margin: 0 auto;
@@ -15,78 +18,82 @@
         position: absolute;
         top: 0;
         left: 0;
-        display: flex;
-        flex-direction: row;
-        -ms-flex-align: center;
-        flex-wrap: nowrap;
-        justify-content: left;
-        align-items: center;
+        white-space: nowrap;
+        transition: transform 1.5s ease-in-out;
         
         .caro-slide {
+            max-width: 850px;
+            box-sizing: border-box;
+            padding: 0 25px;
             width: 100%;
+            display: inline-block;
             margin: 0;
             position: relative;
 
-            img {
-                display: block;
-                width: 100%;
-            }
+            .caro-slide-content {
+                position: relative;
 
-            .caro-description {
-                display: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                justify-content: center;
-                align-items: center;
-                background-color: rgba(0,0,0,.55);
-
-                &.active {
-                    display: flex;
-                }
-
-                p {
-                    color: #fff;
-                    text-align: center;
-                    width: 90%;
-                }
-            }
-
-            .caro-description-btn {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                width: 32px;
-                height: 32px;
-                border: 2px solid var(--darkergrey);
-                border-radius: 16px;
-                text-align: center;;
-                background-color: var(--darkergrey);
-                outline: none;
-                font-size: 0;
-                color: #fff;
-                cursor: pointer;
-                z-index: 1000;
-
-                &:before {
-                    content:'i';
+                img {
                     display: block;
-                    font-family: "Libre Caslon Text", serif;
-                    font-weight: 700;
-                    font-size: 18px;
-                    color: #fff;
-                    position: absolute;
-                    left: 11px;
-                    top: 4px;
+                    width: 100%;
                 }
 
-                &.active {
-                    background-color: #fff;
+                .caro-description {
+                    display: none;
+                    position: absolute;
+                    white-space: normal;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0,0,0,.55);
+
+                    &.active {
+                        display: flex;
+                    }
+
+                    p {
+                        color: #fff;
+                        text-align: center;
+                        width: 90%;
+                    }
+                }
+
+                .caro-description-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 35px;
+                    width: 32px;
+                    height: 32px;
+                    border: 2px solid #000;
+                    border-radius: 16px;
+                    text-align: center;
+                    background-color: #000;
+                    outline: none;
+                    font-size: 0;
+                    color: #fff;
+                    cursor: pointer;
+                    z-index: 1000;
 
                     &:before {
-                        color: var(--darkergrey);
+                        content:'i';
+                        display: block;
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: #fff;
+                        position: absolute;
+                        left: 7px;
+                        top: 7px;
+                    }
+
+                    &.active {
+                        background-color: #fff;
+
+                        &:before {
+                            color: #000;
+                        }
                     }
                 }
             }
@@ -112,14 +119,12 @@
         &.caro-left {
             left: 0;
             justify-content: left;
-            background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1) 95%);
             padding-left: 10px;
         }
 
         &.caro-right {
             right: 0;
             justify-content: right;
-            background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 95%);
             padding-right: 10px;
         }
     }
@@ -135,16 +140,16 @@
 
         button {
             font-size: 24px;
-            color: var(--lightgrey);
-            border: 2px solid var(--lightgrey);
+            color: #666;
+            border: 2px solid #666;
             border-radius: 18px;
             background: transparent;
             padding: 5px 10px;
             cursor: pointer;
 
             &.active {
-                border-color: var(--darkgrey);
-                color: var(--darkgrey);
+                border-color: #000;
+                color: #000;
             }
 
             &+button {
@@ -153,8 +158,8 @@
 
             &:hover {
                 color: #fff;
-                background: var(--lightgrey);
-                border-color: var(--lightgrey);
+                background: #000;
+                border-color: #000;
             }
         }
     }
@@ -173,12 +178,12 @@
         z-index: 500;
 
         .caro-dot {
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             padding: 0;
             border: none;
-            border-radius: 4px;
-            margin: 0 8px;
+            border-radius: 6px;
+            margin: 0 12px;
 
             &.active {
                 background-color: blue;
