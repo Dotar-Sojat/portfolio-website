@@ -17,6 +17,27 @@ function getJSONData(sourcefile) {
         console.error('Error fetching JSON data:', error);
         throw error;
       });
-  }
+}
 
-export { setElAttributes, setElStyles, getJSONData };
+function configureOverlay() {
+  if (!document.getElementById('page-overlay')) {
+    let pageOverlay = document.createElement('div');
+    setElAttributes(pageOverlay, {
+      'id':'page-overlay',
+      'class': 'overlay'
+    });
+    let pageOverlayBtn = document.createElement('button');
+    setElAttributes(pageOverlayBtn, {
+      'id':'page-overlay-btn',
+    });
+    pageOverlayBtn.addEventListener('click', () => {
+      pageOverlay.classList.toggle('active');
+      document.body.classList.toggle('locked');
+    });
+    pageOverlay.appendChild(pageOverlayBtn);
+    document.body.appendChild(pageOverlay);
+  }
+  return document.getElementById('page-overlay');
+}
+
+export { setElAttributes, setElStyles, configureOverlay, getJSONData };
