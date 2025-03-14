@@ -5,6 +5,9 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
   const caroContainerDiv = document.getElementById(caroEl);
   
+  const caroSlideTitle= document.createElement('div');
+  caroSlideTitle.classList.add('caro-slide-title');
+
   const caroDisplayDiv = document.createElement('div');
   caroDisplayDiv.classList.add('caro-display-div');
 
@@ -18,6 +21,14 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
   const caroDotsDiv = document.createElement('div');
   caroDotsDiv.classList.add('caro-dots-div');
+
+  const pageOverlay = configureOverlay();
+  const overlayDescription = document.createElement('div');
+  setElAttributes(overlayDescription,{
+    'class':'mobile-description'
+  });
+
+  pageOverlay.appendChild(overlayDescription);
 
   let itemDescriptions = false;
   let categorizedItems = {'uncategorized' : []};
@@ -37,7 +48,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
   setElAttributes(caroRightBut,{ 'aria-label': 'Move slideshow right'});
  
   caroDisplayDiv.append(caroSlidesDiv);
-  caroContainerDiv.append(caroDisplayDiv,caroLeftBut,caroRightBut,caroDotsDiv);
+  caroContainerDiv.append(caroSlideTitle,caroDisplayDiv,caroLeftBut,caroRightBut,caroDotsDiv);
 
   getJSONData(sourceJSON)
     .then(jsonData => {
@@ -86,6 +97,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
         let caroSlide = document.createElement('div');
         setElAttributes(caroSlide,{
             'data-slide-index':slideIndex,
+            'data-slide-title':item.title,
             'class':'caro-slide'
         });
         if (slideIndex === 0) caroSlide.classList.add('active');
@@ -103,8 +115,6 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
         });
 
         if (itemDescriptions) {
-
-          if (!document.getElementById('mobile-description-btn')) configureMobileOverlay();
  
           let caroDescription = document.createElement('div');
           setElAttributes(caroDescription,{
@@ -113,6 +123,10 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
           });
 
           caroDescription.innerHTML = '<p>' + item.description + '</p>';
+          if (item.link !='') {
+            caroDescription.innerHTML += '<p><a href="' + item.link + '" target="_blank">' + item.link_description + '</a></p>';
+          }
+
           let caroDescriptionBtn = document.createElement('button');
           setElAttributes(caroDescriptionBtn, {
               'class':'caro-description-btn',
@@ -122,7 +136,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
 
           caroSlideContent.append(caroDescriptionBtn,caroDescription);
           
-        } 
+        }
 
         let caroDot = document.createElement('button');
         setElAttributes(caroDot, {
@@ -130,6 +144,7 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
             'class':'caro-dot',
             'aria-label': 'View slide ' + Number(slideIndex + 1)
         });
+
         if (slideIndex === 0) caroDot.classList.add('active');
 
         caroDot.addEventListener('click',selectSlide);
@@ -146,40 +161,18 @@ function buildCarousel(caroEl, sourceJSON, categories = null) {
       console.error('Error in buildCarousel:', error);
     });
 
-    function configureMobileOverlay() {
-      let pageOverlay = configureOverlay();
-      let overlayDescription = document.createElement('div');
-      setElAttributes(overlayDescription,{
-        'class':'mobile-description'
-      });
-      pageOverlay.appendChild(overlayDescription);
-
-      let mobileDescriptionBtn = document.createElement('button');
-      setElAttributes(mobileDescriptionBtn,{
-        'id':'mobile-description-btn',
-        'class':'simple-button'
-      });
-      mobileDescriptionBtn.addEventListener('click', (e) => {
-        overlayDescription.innerHTML = '';
-        let targetCarousel = e.target.closest('.carousel');
-        let caroInfo = getCaroInfo(targetCarousel);
-        let slideDescriptions = targetCarousel.querySelectorAll('.caro-description');
-        slideDescriptions.forEach(desc => {
-          if (desc.getAttribute('data-slide-index') == caroInfo.activeSlide) {
-            overlayDescription.innerHTML = desc.innerHTML;
-          }
-        });
-        document.body.classList.toggle('locked');
-        pageOverlay.classList.toggle('active');
-      });
-      caroContainerDiv.appendChild(mobileDescriptionBtn);
-    }
-
     function toggleCaroDescription(e) {
+      overlayDescription.innerHTML = '';
       let slideInfoBtn = e.target;
       let slideDescription = slideInfoBtn.parentElement.querySelector('.caro-description');
-      slideInfoBtn.classList.toggle('active');
-      slideDescription.classList.toggle('active');
+      if (window.innerWidth < 768) {
+        overlayDescription.innerHTML = slideDescription.innerHTML;
+        document.body.classList.toggle('locked');
+        pageOverlay.classList.toggle('active');
+      } else {
+        slideInfoBtn.classList.toggle('active');
+        slideDescription.classList.toggle('active');
+      }
     }
 
     function getCaroInfo(caro) {

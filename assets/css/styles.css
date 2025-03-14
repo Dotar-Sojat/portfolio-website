@@ -177,9 +177,11 @@ p + h2, p + h3, p + h4 {
   box-shadow: 2px 2px 4px #999;
 }
 
-#portfolio-carousel {
+#home-carousel-section {
   margin: 50px auto;
+  padding: 50px 0;
 }
+
 #portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content img {
   border: 1px solid var(--darkgrey);
 }
@@ -239,6 +241,37 @@ p + h2, p + h3, p + h4 {
 }
 
 #page-overlay-btn {
+  border: 1px solid var(--darkergrey);
+  background-color: var(--darkergrey);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border-radius: 30px;
+  position: relative;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-overlay-btn span {
+  margin: 0;
+  padding: 0;
+}
+
+.simple-button {
+  border: 1px solid var(--darkergrey);
+  background-color: var(--darkergrey);
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+#page-overlay-btn {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -247,6 +280,12 @@ p + h2, p + h3, p + h4 {
 
 #mobile-description-btn {
   display: none;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  width: 175px;
+  bottom: -75px;
 }
 
 .mobile-description {
@@ -256,10 +295,27 @@ p + h2, p + h3, p + h4 {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+.mobile-description p {
+  width: 90%;
+}
+.mobile-description a {
+  color: #fff;
+}
+
+#footer-links {
+  padding: 32px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer-links li {
+  margin: 0 32px;
 }
 
 @media screen and (max-width: 1175px) {
@@ -284,14 +340,15 @@ p + h2, p + h3, p + h4 {
   #skills_list li {
     width: 100%;
   }
-  #portfolio-carousel {
-    margin: 100px auto;
+  #home-carousel-section {
+    padding: 50px 0 150px 0;
   }
   #portfolio-carousel .caro-display-div {
     width: 100%;
+    padding: 0 0 44% 0;
   }
   #portfolio-carousel .caro-dir-btn {
-    bottom: -50px;
+    bottom: -75px;
     top: auto;
     height: 50px;
   }
@@ -302,16 +359,13 @@ p + h2, p + h3, p + h4 {
     right: calc(50% - 75px);
   }
   #portfolio-carousel .caro-dots-div {
-    bottom: -100px;
+    bottom: -125px;
   }
   #portfolio-carousel .caro-categories-div {
     left: 0;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-  }
-  #mobile-description-btn {
-    display: block;
   }
 }
 @media screen and (max-width: 500px) {
@@ -325,10 +379,14 @@ p + h2, p + h3, p + h4 {
   position: relative;
   margin: 0 auto;
 }
+.carousel .caro-slide-title {
+  width: 100%;
+  margin: 0 auto 10px;
+}
 .carousel .caro-display-div {
   position: relative;
   width: calc(100% - 100px);
-  padding: 0 0 46% 0;
+  padding: 0 0 41% 0;
   overflow: hidden;
   z-index: 100;
   margin: 0 auto;
@@ -348,6 +406,7 @@ p + h2, p + h3, p + h4 {
   padding: 0 25px;
   width: 100%;
   display: inline-block;
+  white-space: normal;
   margin: 0;
   position: relative;
 }
@@ -358,8 +417,15 @@ p + h2, p + h3, p + h4 {
   display: block;
   width: 100%;
 }
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-title {
+  line-height: 1;
+  text-align: center;
+}
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
   position: absolute;
@@ -368,8 +434,6 @@ p + h2, p + h3, p + h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
   background: rgba(51, 51, 51, 0.75);
   background: radial-gradient(circle, rgba(51, 51, 51, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
 }
@@ -381,6 +445,9 @@ p + h2, p + h3, p + h4 {
   text-shadow: 2px 2px 2px #000;
   text-align: center;
   width: 90%;
+}
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description p a {
+  color: #fff;
 }
 .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn {
   position: absolute;

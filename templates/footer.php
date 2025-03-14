@@ -1,9 +1,10 @@
         <footer>
-            <div id="page_footer">
+            <div id="page-footer">
                 <div class="container">
-                    <div id="page_banner_bottom" class="page_banner">
-                        <br>
-                    </div>
+                    <ul id="footer-links">
+                        <li><a href="mailto:wmacnish@gmail.com">Contact</a></li>
+                        <li><a href="https://www.linkedin.com/in/william-macnish/" target="_blank">LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
         </footer>

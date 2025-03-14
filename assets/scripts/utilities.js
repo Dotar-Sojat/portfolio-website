@@ -30,6 +30,7 @@ function configureOverlay() {
     setElAttributes(pageOverlayBtn, {
       'id':'page-overlay-btn',
     });
+    pageOverlayBtn.innerHTML = '<span>&#x1f7ac;</span>';
     pageOverlayBtn.addEventListener('click', () => {
       pageOverlay.classList.toggle('active');
       document.body.classList.toggle('locked');
