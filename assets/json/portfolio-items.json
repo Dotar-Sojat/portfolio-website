@@ -74,6 +74,17 @@
         "link": "https://trackersuite.net/pdf/Leverage_v9.pdf",
         "link_description": "View PDF",
         "title": "Leverage (company newsletter)", 
-        "description": "Leverage was a 8 page company newsletter available in both print and online. I wrote the articles, managed the layout and artwork, and even wrote the comic on the back page (artwork by the extremely talented <a href=\"https://www.instagram.com/joeforkan/\" target=\"_blank\">Joe Forkan</a>)"
-    }  
+        "description": "Leverage was a 8 page company newsletter available in both print and online. I researched andwrote the articles, managed the layout and artwork, and even scripted the comic on the back page (artwork by the extremely talented <a href=\"https://www.instagram.com/joeforkan/\" target=\"_blank\">Joe Forkan</a>)"
+    },
+    { 
+        "name": "nessa",
+        "category": "wordpress",
+        "url": "/assets/images/thumb_nessa.jpg",
+        "image_description": "Home page of nessa.org",
+        "id": "1070", 
+        "link": "https://web.archive.org/web/20180902112659/https://www.nessa.org/",
+        "link_description": "Visit archived site",
+        "title": "Northeast Self Storage Association", 
+        "description": "I developed a customized WordPress theme that was utilized by several self storage associations, including the Northeast Self Storage Association. The template included customized integration of a third-party membership plugin that helped these organizations to better manage their members, handle membership registration, facilitate product marketing and sales, and enhance member collaboration and community."
+    }
 ]

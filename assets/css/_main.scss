@@ -170,7 +170,7 @@ p {
                         top: 4px;
                     }
 
-                    &.active {
+                    &.active, &:hover {
                         background-color: #fff;
                         
                         &:before {
@@ -184,6 +184,10 @@ p {
 
     .caro-dir-btn {
         color: var(--darkergrey);
+
+        &:hover {
+            color: var(--darkgrey);
+        }
     }
 
     .caro-categories-div {
@@ -210,7 +214,7 @@ p {
         .caro-dot {
             background-color: var(--lightergrey);
 
-            &.active {
+            &.active, &:hover {
                 background-color: var(--darkgrey);
             }
         }

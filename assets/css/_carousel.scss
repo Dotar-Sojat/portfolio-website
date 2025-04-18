@@ -112,7 +112,7 @@
                         top: 7px;
                     }
 
-                    &.active {
+                    &.active, &:hover {
                         background-color: #fff;
 
                         &:before {
@@ -139,6 +139,12 @@
         background-color: transparent;
         outline: none;
         font-size: 42px;
+        color: #333;
+        cursor: pointer;
+
+        &:hover {
+            color: #666;
+        }
 
         &.caro-left {
             left: 0;
@@ -210,8 +216,9 @@
             margin: 0 12px;
             background-color: #666;
             transition: background-color .25s ease-in-out;
+            cursor: pointer;
 
-            &.active {
+            &.active, &:hover {
                 background-color: #333;
             }
         }

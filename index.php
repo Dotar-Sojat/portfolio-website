@@ -5,7 +5,7 @@
 
             <div class="container">
 
-                <p id="last_update">Last Updated: 3/13/2025</p>
+                <p id="last_update">Last Updated: 4/18/2025</p>
 
                 <p>Hello and welcome to my site, hand-coded in PHP, HTML, CSS and a bit of vanilla Javascript.  If you'd like to see the code behind it all, you can take a look at the files on GitHub <a href="https://github.com/Dotar-Sojat/portfolio-website" target="_blank">here</a>.
 

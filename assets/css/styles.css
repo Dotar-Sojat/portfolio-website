@@ -196,14 +196,17 @@ p + h2, p + h3, p + h4 {
   left: 11px;
   top: 4px;
 }
-#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active {
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active, #portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:hover {
   background-color: #fff;
 }
-#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before {
+#portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before, #portfolio-carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:hover:before {
   color: var(--darkergrey);
 }
 #portfolio-carousel .caro-dir-btn {
   color: var(--darkergrey);
+}
+#portfolio-carousel .caro-dir-btn:hover {
+  color: var(--darkgrey);
 }
 #portfolio-carousel .caro-categories-div button {
   color: var(--lightgrey);
@@ -221,7 +224,7 @@ p + h2, p + h3, p + h4 {
 #portfolio-carousel .caro-dots-div .caro-dot {
   background-color: var(--lightergrey);
 }
-#portfolio-carousel .caro-dots-div .caro-dot.active {
+#portfolio-carousel .caro-dots-div .caro-dot.active, #portfolio-carousel .caro-dots-div .caro-dot:hover {
   background-color: var(--darkgrey);
 }
 
@@ -477,10 +480,10 @@ p + h2, p + h3, p + h4 {
   left: 7px;
   top: 7px;
 }
-.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active, .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:hover {
   background-color: #fff;
 }
-.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before {
+.carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn.active:before, .carousel .caro-slides-div .caro-slide .caro-slide-content .caro-description-btn:hover:before {
   color: #000;
 }
 .carousel .caro-dir-btn {
@@ -498,6 +501,11 @@ p + h2, p + h3, p + h4 {
   background-color: transparent;
   outline: none;
   font-size: 42px;
+  color: #333;
+  cursor: pointer;
+}
+.carousel .caro-dir-btn:hover {
+  color: #666;
 }
 .carousel .caro-dir-btn.caro-left {
   left: 0;
@@ -561,7 +569,8 @@ p + h2, p + h3, p + h4 {
   margin: 0 12px;
   background-color: #666;
   transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
 }
-.carousel .caro-dots-div .caro-dot.active {
+.carousel .caro-dots-div .caro-dot.active, .carousel .caro-dots-div .caro-dot:hover {
   background-color: #333;
 }/*# sourceMappingURL=styles.css.map */
